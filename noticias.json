@@ -38,5 +38,21 @@
     "date": "2025-02-18",
     "url": "https://www.exemplo.com/noticia3",
     "source": "Exemplo News"
+  },
+  {
+    "id": 6,
+    "title": "Notícia 3",
+    "description": "Resumo da notícia 3.",
+    "date": "2025-02-18",
+    "url": "https://www.exemplo.com/noticia3",
+    "source": "Exemplo News"
+  },
+  {
+    "id": 7,
+    "title": "Notícia 3",
+    "description": "Resumo da notícia 3.",
+    "date": "2025-02-18",
+    "url": "https://www.exemplo.com/noticia3",
+    "source": "Exemplo News"
   }
 ]

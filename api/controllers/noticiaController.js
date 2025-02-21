@@ -7,8 +7,13 @@ class NoticiaController {
     }
 
     static getById(req, res) {
-        const { id } = req.params;
-        const noticia = NoticiaRepository.getById(id);
+        const noticiaId = parseInt(req.params.id);
+
+        if (!noticiaId || noticiaId <= 0) {
+            return res.status(404).json({ message: 'Id da notícia é inválido' });
+        }
+
+        const noticia = NoticiaRepository.getById(noticiaId);
 
         if (!noticia) {
             return res.status(404).json({ message: 'Notícia não encontrada' });
@@ -30,15 +35,22 @@ class NoticiaController {
         res.status(201).json(noticia);
     }
 
-    static delete(req, res) {
-        const { id } = req.params;
-        const deletedNoticia = NoticiaRepository.delete(id);
+    static deleteById(req, res) {
+        const noticiaId = parseInt(req.params.id);
+
+
+        if (!noticiaId || noticiaId <= 0) {
+            return res.status(404).json({ message: 'Id da notícia é inválido' });
+        }
+
+
+        const deletedNoticia = NoticiaRepository.delete(noticiaId);
 
         if (!deletedNoticia) {
             return res.status(404).json({ message: 'Notícia não encontrada' });
         }
 
-        res.status(204).send();
+        res.status(200).json({ message: `Notícia com ID ${noticiaId} deletada com sucesso!` });
     }
 }
 
